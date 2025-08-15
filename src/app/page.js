@@ -1,103 +1,226 @@
+"use client";
 import Image from "next/image";
+import "./page.css";
+import Navbar from "./components/navbar";
+import Section from "./components/section";
+
+import { useState } from "react";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [selectedProject, setSelectedProject] = useState(null);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const projects = [
+    {
+      id: "project1",
+      title: "Accessing Student Performance",
+      field: "ML Model",
+      description:
+        "Ever wonder if we can predict whether a student will get a math problem right or wrong? Our team took on this challenge using the MathE learning dataset. We developed a sophisticated model using a powerful machine learning technique called XGBoost to analyze various factors like the student's country, the math topic, and even the specific question. To make our predictions even smarter, we engineered new insights from the data, creating unique metrics for student skill, question difficulty, and even the difficulty of an entire topic. After extensive fine-tuning, our model successfully achieved an accuracy of 72.35%, providing a promising new tool that could one day help identify struggling students and improve how math is taught online.",
+      linkk:
+        "https://github.com/Overfitters-Anonymous/MLDL-Final-Project/blob/main/MathE%20dataset%20analysis%20with%20XGBoost%20and%20Deep%20Learning%20models%20Final%20Report.pdf",
+    },
+    {
+      id: "project2",
+      title: "Image Explainer",
+      field: "Gen AI App",
+      description:
+        "Ever wished you could get a little more insight into the world around you? With Image Explainer, you can. Simply snap a photo, and our app, powered by Gemini AI, will describe what it sees in detail. We originally created this as a tool to help visually impaired individuals explore their environment, and now we've made it available for everyone to enjoy. Plus, with audio descriptions enabled by default, you can hear the story behind your pictures.",
+      linkk: "https://github.com/AbhishekPanditPro/Lamar",
+    },
+    {
+      id: "project3",
+      title: "NEO Volleyball",
+      field: "Website",
+      description:
+        "The North East Ohio Volleyball Platform is a comprehensive digital system designed to transform volleyball management from traditional methods to a more streamlined and efficient process. Our mission is to enhance accessibility for all users—including League Managers, Referees, and Players—by providing a secure, user-friendly platform with role-based features tailored to their specific tasks. By moving record-keeping and performance analytics online, the system offers powerful tools for game scheduling, team management, and up-to-date league statistics, helping to effectively streamline the management of multiple leagues.",
+      linkk:
+        "https://github.com/CapstoneNEOproject/volleyball_system/tree/main",
+    },
+    {
+      id: "project4",
+      title: "FoodieGoodie",
+      field: "Website",
+      description:
+        "Have you ever wondered what makes a website so enjoyable that you can't wait to come back? That's the core question we explored with FoodieGoodie. This project is more than just an e-commerce site; it's a deep dive into how thoughtful, cognitive design can create a delightful user experience. We experimented with everything from the psychology of colors and the shape of a food container to a playful, animated checkout system. The goal was to discover how these small details could work together to help users navigate faster, more efficiently, and ultimately, make them excited to return. Built from the ground up with HTML, CSS, and JavaScript, FoodieGoodie is our playground for understanding how to make web interactions feel less like a task and more like a joy.",
+      linkk: "https://github.com/TheRealestDiehl/FoodieGoodie",
+    },
+    {
+      id: "project5",
+      title: "Pixel Painter",
+      field: "Website & Game",
+
+      description:
+        "Pixel Painter is more than just a game; it's the result of a journey to experience what it's truly like to work in a real-world software engineering team. From the start, our goal was to build not only a fun game and website using p5.js, HTML, and CSS but also to embrace the entire development lifecycle. We challenged ourselves by applying professional methodologies like Agile and Waterfall, ensuring everything we built was rigorously tested, optimized, and retested for quality. To keep our team in sync and our process smooth, we used advanced collaboration tools like GitHub's Kanban boards and Actions, mirroring a modern tech workflow. This project was our opportunity to put classroom theories into practice, culminating in a final product that we were proud to showcase.",
+      linkk:
+        "https://github.com/Delta-Group-Software-Engineering-2023/Delta-10_Pixel_Painter_Software_Engineering_Spring2023",
+    },
+    {
+      id: "project6",
+      title: "Drishti Nepal",
+      field: "Mobile Application",
+      description:
+        "For the tens of thousands of visually impaired individuals in Nepal, simple daily tasks like paying for groceries can be a significant challenge, creating moments of uncertainty and dependence. Project Drishti was born from a desire to address this, offering an acute insight into a world of possibilities through AI. Our mobile application empowers visually impaired users by instantly recognizing Nepalese currency bills through their phone's camera and announcing the value aloud in the Nepali language. Designed with deep respect for our users, the app works entirely offline, is completely free of ads for a smooth experience, and includes a history feature to help track spending. Drishti is more than just a currency reader; it's an open-source, community-driven initiative with a vision to become a full-fledged daily assistant, and we invite everyone to help us build a more accessible world.",
+      linkk:
+        "https://drishtinepal.medium.com/drishti-an-acute-insight-into-ai-407e417028ce",
+    },
+  ];
+
+  const downloadPDF = () => {
+    const link = document.createElement("a");
+    link.href = "/resume.pdf"; // Make sure this file is in your /public folder
+    link.download = "Abhishek_Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+  const logo = () => {
+    const link = document.createElement("a");
+    link.href = "https://github.com/AbhishekPanditPro"; // Make sure this file is in your /public folder
+    link.click();
+
+    // document.body.removeChild(link);
+  };
+
+  const socialLinks = [
+    {
+      name: "facebook",
+      href: "https://www.facebook.com/abu.abhishek100",
+      src: "/facebook.png",
+    },
+    {
+      name: "github",
+      href: "https://github.com/AbhishekPanditPro",
+      src: "/github.png",
+    },
+    {
+      name: "linkedin",
+      href: "https://www.linkedin.com/in/abhishek-pandit1/",
+      src: "/linkedin.png",
+    },
+    {
+      name: "instagram",
+      href: "https://www.instagram.com/ab.hishekpandit/",
+      src: "/instagram.png",
+    },
+  ];
+  return (
+    <main>
+      <Navbar />
+      <Section id="home" title="Home">
+        <div className="mainContainer">
+          <div className="container2">
+            <div className="aboutMe">
+              <div className="myname">
+                <h1>Abhishek Pandit</h1>
+              </div>
+              <p id="bio">
+                I’m a software engineer who thrives at the intersection of
+                machine-learning research and full-stack development, always
+                looking to turn ideas into scalable products; off the keyboard,
+                you’ll catch me chasing a soccer ball or hiking the nearest
+                trail.
+              </p>
+              <div className="medias">
+                {socialLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      className="logo"
+                      src={link.src}
+                      width={45}
+                      height={45}
+                      alt={link.name}
+                    />
+                  </a>
+                ))}
+              </div>
+            </div>
+            <div className="myimage">
+              <Image
+                className="roundedImg"
+                src="/abhishek.png"
+                fill
+                sizes="(max-width: 768px) (max-width: 300px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                alt="My Pic"
+              />
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </Section>
+
+      {/* <Section id="about" title="About Me" bgColor="grey" /> */}
+      <Section id="projects" title="Projects">
+        <div className="mainProject">
+          <ul className="listProject">
+            {projects.map((project) => (
+              <li
+                key={project.id}
+                className="projects"
+                onClick={() => setSelectedProject(project.id)}
+              >
+                <div className="project-background"></div>
+                <h3>{project.title}</h3>
+                <h4>{project.field}</h4>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Section>
+      {selectedProject && (
+        <div className="modal-overlay" onClick={() => setSelectedProject(null)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            {(() => {
+              const project = projects.find((p) => p.id === selectedProject);
+              if (project) {
+                return (
+                  <>
+                    <h2>{project.title}</h2>
+                    <p>{project.description}</p>
+
+                    {project.linkk && (
+                      <a
+                        href={project.linkk}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-link"
+                      >
+                        View Project
+                      </a>
+                    )}
+                  </>
+                );
+              }
+
+              return <p>Project details not found.</p>;
+            })()}
+
+            <button
+              onClick={() => setSelectedProject(null)}
+              className="project-close"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+
+      <Section id="resume" title="Resume">
+        <div className="mainResume">
+          <div className="iframe-container">
+            <iframe src="/resume.html" />
+          </div>
+
+          <button className="download" onClick={downloadPDF}>
+            DOWNLOAD RESUME
+          </button>
+        </div>
+      </Section>
+
+      <footer>My naem</footer>
+    </main>
   );
 }

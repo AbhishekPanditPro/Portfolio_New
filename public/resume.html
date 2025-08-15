@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abhishek Pandit - Resume</title>
+  <style>
+    /* Light Mode (Default) */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+      background-color: #ffffff;
+      color: #333333;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    h1, h2 {
+      color: #000000;
+    }
+
+    /* Dark Mode Styles */
+    body.dark-mode {
+      background-color: #121212;
+      color: #ffffff;
+    }
+
+    body.dark-mode h1,
+    body.dark-mode h2 {
+      color: #ffffff;
+    }
+
+    body.dark-mode h2 {
+      border-bottom-color: #444;
+    }
+
+    body.dark-mode a {
+      color: #4da6ff;
+    }
+
+    /* --- CSS For Toggle Switch --- */
+    .toggle {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+
+    .toggle input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #000000;
+      transition: 0.4s;
+      border-radius: 34px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #ffffff;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(26px);
+      background-color: #000000;
+    }
+    /* --- End of Toggle Switch CSS --- */
+    
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+    
+    h1 {
+      font-size: 28px;
+      /* CSS change: Use Flexbox to align name and toggle */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    h2 {
+      font-size: 20px;
+      margin-top: 30px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+    
+    .contact-info, .section {
+      margin-top: 20px;
+    }
+    
+    ul {
+      padding-left: 20px;
+    }
+    
+    .project-title, .job-title {
+      font-weight: bold;
+    }
+    
+    .date {
+      float: right;
+      font-style: italic;
+    }
+    
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    
+    a:hover {
+      text-decoration: underline;
+    }
+    
+    @media (max-width: 600px) {
+      .date {
+        float: none;
+        display: block;
+        margin-top: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  
+  <h1>
+    Abhishek Pandit
+    <label class="toggle">
+      <input type="checkbox" id="theme-toggle" />
+      <span class="slider"></span>
+    </label>
+  </h1>
+
+  <div class="contact-info">
+    (425) 866-3406 | <a href="mailto:abhishekppandit@gmail.com">abhishekppandit@gmail.com</a><br>
+    <a href="https://github.com/AbhishekPanditPro" target="_blank">GitHub</a> | 
+    <a href="https://www.linkedin.com/in/abhishek-pandit-8a797b20a/" target="_blank">LinkedIn</a>
+  </div>
+
+  <h2>Education</h2>
+  <p><strong>Kent State University</strong> | BS. Computer Science <span class="date">May 2025 / GPA 3.75</span><br>
+  <em>Relevant Coursework:</em> Data Structures/Algorithms, Operating Systems, Database Systems, Network
+Security, Network Systems, Software Engineering, Secure Programming, Intro to Artificial Intelligence, Intro
+to Machine Learning, Computer Patterns, Human Interface Computing, Big Data</p>
+
+  <h2>Skills</h2>
+  <ul>
+    <li><strong>Languages:</strong> Python, C++, Java, JavaScript, R-Studio, HTML, CSS, SQL</li>
+    <li><strong>Frameworks/Libraries:</strong> Next.js, React, </li>
+    <li><strong>Mobile Development:</strong> Android Application Development (Studio), React Native, Django, Flutter</li>
+    <li><strong>APIs:</strong> React APIs, RESTful APIs</li>
+    <li><strong>AI/ML/DATA:</strong> Artificial Intelligence, Machine Learning, TensorFlow, Scikit-learn, Pytorch, Numpy, Pandas</li>
+    <li><strong>Databases:</strong> SQL, PostgreSQL</li>
+    <li><strong>Cloud & DevOps:</strong> Amazon Web Services (AWS), Azure</li>
+    <li><strong>Develper Tools:</strong> Figma, Postman, Jira, Git, Github</li>
+  </ul>
+
+  <h2>Projects</h2>
+  <p class="project-title">Machine/Deep Learning <span class="date">Spring 2025</span></p>
+  <ul>
+    <li>Build a machine learning model to predict student performance based on country, topic, sub-topic, and associated keywords, using a dataset of 9546 records.</li>
+    <li>Developed and evaluated two supervised models: a TensorFlow deep learning sequential model (60% accuracy) and a Scikit-learn XGBoost classifier (72.35% accuracy), authored report.</li>
+  </ul>
+
+  <p class="project-title">Image Explainer <span class="date">March 2024</span></p>
+  <ul>
+    <li>Spearheaded delivery of a cross-platform (iOS/Android) React Native app to enable real-time object recognition for visually impaired users; integrated Gemini Gen AI Vision & Language APIs via React Native’s fetch client and invoked native Text-to-Speech bridges for instant audio feedback.</li>
+    <li>Engineered a Node.js backend with 5+ RESTful JSON endpoints, implementing JWT-based stateless authentication, bcrypt password hashing, and secure session tokens to secure user accounts.</li>
+    <li>Designed and optimized a relational SQL database with normalized schemas, indexed columns, and connection pooling to implement low-latency average query retrieval.</li>
+  </ul>
+
+  <p class="project-title">NEO Volleyball (Webapp) <span class="date">Fall 2024</span></p>
+  <ul>
+    <li>Built a cross-platform tournament manager using React.js (Bootstrap) and Django REST Framework.</li>
+    <li>Developed RESTful APIs, JSON parsing, and custom middleware for real-time frontend-backend sync for reactive state management, client/server-side form validation, and live UI shuffling of players.</li>
+    <li>Automated legacy Excel-based processes by creating import/export pipelines and dynamic form generators; implemented modular components to support concurrent edits and live data sync.</li>
+    <li>Built JWT-based auth system, registration portal & calendar scheduler with React Hooks and Context API. Designed UML diagrams, system architecture docs, & showcased the app as a final presentation.</li>
+  </ul>
+
+  <p class="project-title">Fresh Food Delivery Website <span class="date">Spring 2023</span></p>
+  <ul>
+    <li>Designed and built an e-commerce app using Vanilla JS and Flask (Python) exposing JSON endpoints consumed via jQuery AJAX for dynamic product catalog, cart operations, and order management.</li>
+    <li>Applied cognitive design principles to design an interactive UX, optimizing accessibility and performance, culminating in a polished live demo presented to 30+ classmates and faculty.</li>
+  </ul>
+
+  <h2>Experience</h2>
+  <p class="job-title">Research Assistant – Dr. Gokarna Sharma, Ph.D. <span class="date">Fall 2024 - Spring 2025</span></p>
+  <ul>
+    <li>Co-led a faculty research project, mapping end-to-end data flows between blockchain validation layers & AI inference components to define technical requirements for data accuracy, integrity, & auditability.</li>
+    <li>Conducted in-depth technical literature review of blockchain consensus and cryptographic protocols (PoW, PoS, Merkle Trees) to architect a secure on-chain data layer for AI model preprocessing.</li>
+    <li>Designed use cases for blockchain-verified datasets in TinyML training pipelines, detailing how immutable provenance and integrity checks can boost query precision and reduce inference overhead.</li>
+    <li>Authored a review paper on advanced reasoning-capable LLMs (OpenAI-o1 v. DeepSeek-R1), analyzing pre-training methods, RLHF and distillation pipelines, CoT prompting, and RL optimizers.</li>
+  </ul>
+
+  <p class="job-title">Kent State University | Technical Support <span class="date">Dec 2021 - May 2025</span></p>
+  <ul>
+    <li>Automated user lifecycle management in Active Directory & Office 365 by scripting bulk provisioningand policy assignments with PowerShell</li>
+    <li>Diagnosed and resolved complex software, hardware, and network issues across Windows & Mac environments, enhancing system reliability.</li>
+  </ul>
+</div>
+
+<script>
+  // This JavaScript does not need to be changed.
+  const themeToggle = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+  });
+</script>
+
+</body>
+</html>

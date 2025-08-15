@@ -1,0 +1,653 @@
+main{
+  height: 100vh;
+  width: 100vw;
+}
+Section {
+  height: 100%;
+  width: 100%;
+  /* background-image: url("/background.jpg"); */
+}
+#home,
+#home > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: cyan; */
+}
+
+.mainContainer {
+  /* background-color: red; */
+  display: flex;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+
+
+  /* flex-direction: row; */
+  /* align-items: center; */
+  /* justify-content: space-between; */
+  /* overflow: hidden; */
+  /* white-space: nowrap; */
+  text-overflow: ellipsis;
+
+  align-items: center;
+  justify-content: center;
+
+}
+.container2{
+   display: flex;
+  width: 90%;
+  height: 100%;
+
+  /* flex-direction: row; */
+  /* align-items: center; */
+  /* justify-content: space-between; */
+  /* overflow: hidden; */
+  /* white-space: nowrap; */
+  text-overflow: ellipsis;
+  /* gap: 70px; */
+  align-items: center;
+
+
+}
+
+.aboutMe {
+  /* border: 2px solid black; */
+  /* background-color: blue; */
+  border-radius: 20px;
+  position: relative;
+  /* overflow: hidden; */
+
+  width: 100%;
+  height: 100%;
+  max-width: 900px;
+  margin-right: 5px;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  /* From https://css.glass */
+  /* background: rgba(0, 0, 0, 1);s */
+
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.6px);
+  -webkit-backdrop-filter: blur(6.6px);
+  /* border: 1px solid rgba(255, 255, 255, 0.0); */
+  /* transition: background-color 1s ease-out; */
+  /* transition: opacity 1s ease-in-out; */
+  transition: background-color 2s ease-in-out; /* Added transition for background-color */
+  gap: 10px;
+  padding: 5px;
+
+}
+.myname h1{margin: 0;
+font-size: 2em;}
+
+@property --angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+
+.aboutMe::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background-image: conic-gradient(
+    from var(--angle),
+    purple,
+    blue,
+    rgb(66, 226, 66),
+    red,
+    purple
+  );
+  z-index: -1;
+  padding: 3px;
+  opacity: 0;
+  animation: animate 10s linear infinite;
+  transition: opacity 1s ease-in-out, background-color 1s ease-in-out;
+  filter: blur(20px);
+}
+
+@keyframes animate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+.aboutMe:hover::before {
+  opacity: 1;
+}
+
+.aboutMe:hover {
+  background-color: black;
+  transition: background-color 0.1s ease-in-out; 
+}
+
+.myname {
+  /* font-size: 1.5vw; */
+  width: fit-content;
+  height: fit-content;
+  font-size: clamp(24px, 1.5vw, 40px);
+  /* border: 2px solid red; */
+}
+#bio {
+  font-size: clamp(15px, 1vw, 40px);
+    margin: 0;
+    font-size: 1.2em;
+  /* border: 2px solid green; */
+}
+
+/* The main container for positioning and triggering the hover */
+.myimage {
+
+  position: relative;
+  width: 25vw;
+  max-width: 500px;
+  min-width: 200px;
+  aspect-ratio: 1 / 1;
+  border-radius: 20px;
+}
+
+/* The initial Next.js <Image> component */
+.roundedImg {
+  position: relative;
+  z-index: 2;
+  border-radius: inherit;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+   mask-image: radial-gradient(circle at 50% 50%, #000 60%, transparent 95%);
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 60%, transparent 95%); /* Safari */
+}
+
+.myimage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+
+  background-image: url("/IMG_4346.jpg");
+  background-size: cover;
+  background-position: center;
+
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.myimage::after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  right: -7px;
+  bottom: -7px;
+  border-radius: inherit;
+
+  background-image: conic-gradient(
+    from var(--angle),
+    purple,
+    blue,
+    rgb(66, 226, 66),
+    red,
+    purple
+  );
+
+  filter: blur(20px);
+  z-index: -1;
+  opacity: 0;
+
+  animation: animate 10s linear infinite;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.myimage:hover .roundedImg {
+  opacity: 0; /* Fade out the initial image */
+}
+
+.myimage:hover::before {
+  opacity: 1; /* Fade in the hover image */
+}
+
+.myimage:hover::after {
+  opacity: 1; /* Fade in the gradient shadow */
+}
+
+
+/* logos will go here */
+.medias{
+  display: flex;
+  gap:10px
+}
+
+.logo{
+    position: static;
+   
+    width: 45px;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    color: transparent;
+}
+
+
+
+
+
+
+
+
+
+/* Project page CSS starts here ----------->*/
+/* 
+
+
+/* Container for the entire projects section */
+#projects,
+#projects > div {
+         width: 100%;
+    height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Ensures content doesn't overflow the viewport height */
+  overflow: auto; 
+  z-index: 1;
+}
+
+/* The main green area holding the list */
+.mainProject {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 80%; /* Height will be determined by content */
+  max-height: 80%; /* Prevents it from getting too tall */
+  /* background-color: green; */
+
+  border-radius: 15px;
+  overflow: auto; /* Add scroll if content overflows */
+}
+
+/* The <ul> element, now a grid container */
+.listProject {
+
+  display: grid;
+
+  /* Creates 2 columns of equal width */
+  grid-template-columns: repeat(3, 1fr); 
+  /* Creates 2 rows of equal height */
+  /* grid-template-rows: repeat(3, 1fr);     */
+
+  gap: 3rem; /* The space between your project containers */
+  width: 80%;
+  height: 80%;
+  
+  /* Reset default list styles */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+justify-content: center;
+align-items: center;
+}
+
+/* Each <li>, styled as a project container */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  color: white;
+}
+
+
+
+
+
+
+/* The white box holding the enlarged project content */
+.modal-content {
+  position: relative;
+  background-color: #333; /* Match your project card color or use white */
+  color: white;
+  padding: 2rem; 
+  border-radius: 15px;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
+.modal-content::before{
+
+content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background-image: conic-gradient(
+    from var(--angle),
+    purple,
+    blue,
+    rgb(66, 226, 66),
+    red,
+    purple
+  );
+  top: -7;
+  bottom: -7;
+  left: -7;
+  right: -7;
+
+  z-index: -1;
+  animation: animate 10s linear infinite;
+  transition: opacity 1s ease-in-out, background-color 1s ease-in-out;
+  opacity: 1;
+
+}
+.modal-content::before{
+  filter: blur(20px);
+}
+
+
+.projects {
+  /* Styling to make it look like a container */
+  background-color: #252525;
+  color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  width: 80% ;
+  height: 50%;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  
+  max-width:500px;
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projects::after,.projects::before{
+content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background-image: conic-gradient(
+    from var(--angle),
+    purple,
+    blue,
+    rgb(66, 226, 66),
+    red,
+    purple
+  );
+  
+  padding: 3px;
+  z-index: -1;
+  animation: animate 10s linear infinite;
+  transition: opacity 1s ease-in-out, background-color 1s ease-in-out;
+  opacity: 0;
+}
+
+
+
+.projects::before{
+    /* top: 100%; */
+ 
+    filter: blur(20px);
+}
+
+
+
+
+
+.projects:hover::after,.projects:hover:before{
+    opacity: 1;
+}
+
+
+.projects:hover {
+  /* transform: translateY(-10px); Lifts the card on hover/ */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+
+.project-link{
+       color: #3593f0;
+      text-decoration: none;
+}
+
+
+
+
+/* --- Responsiveness for smaller screens --- */
+@media (max-width: 768px) {
+  .listProject {
+     /* Switch to a 1-column layout */
+    grid-template-columns: 1fr;
+    /* Let rows size themselves automatically */
+    grid-template-rows: auto; 
+  }
+}
+
+
+/* --- Add these new rules to your CSS file --- */
+
+/* This is the link that fills the project card */
+.project-trigger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* The detailed content, hidden by default */
+.project-details {
+  display: none; /* Hidden until the parent is the :target */
+  padding: 2rem;
+  overflow: auto;
+  z-index: 2;
+}
+
+/* The close button inside the enlarged view */
+.project-close {
+  display: block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: rgb(199, 182, 218);
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  border: none;
+  transition: background-color 0.6s ease-in-out;
+}
+.project-close:hover{
+   background-color: rgb(172, 126, 225);;
+   color: rgb(255, 255, 255);
+}
+
+/* This is the magic! Styling for the enlarged state */
+.projects:target {
+  /* Enlarge and center it on the screen */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  height: 80vh;
+  z-index: 1000; /* Bring it to the front */
+  
+  /* Show the hidden details */
+  display: flex;
+  flex-direction: column;
+}
+
+/* When a project is enlarged, make its inner details visible */
+.projects:target .project-details {
+  display: block;
+}
+
+/* When a project is enlarged, hide the trigger link text */
+.projects:target .project-trigger {
+  display: none;
+}
+
+
+
+#resume,
+#resume > div {
+         width: 100%;
+    height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Ensures content doesn't overflow the viewport height */
+  overflow: auto; 
+}
+.mainResume{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 80%;
+  /* border: 2px solid red; */
+  /* background-color: coral; */
+  border-radius: 20px;
+}
+
+/* iframe{
+  width: 85%;
+  min-width: 60%;
+  height: 95%;
+border: none;
+border-radius: 20px;
+position: relative;
+box-shadow: 0 4px 8px rgba(0,0,0,0.8);
+} */
+
+
+
+
+/* Define the animation for the angle */
+@keyframes animate-angle {
+  to {
+    --angle: 360deg;
+  }
+}
+
+/* Define the CSS variable for the animation */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* The container now holds the size, position, and shadow */
+.iframe-container {
+  /* Let's use the values you had for the iframe */
+  width: 100%;
+  max-width: 1000px;
+  /* min-width: 100%; */
+  height: 100%; /* Using a fixed height for a clearer example */
+  
+  position: relative;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* The pseudo-element is now attached to the container */
+.iframe-container::before {
+  content: "";
+  position: absolute;
+  /* Make the pseudo-element cover the container exactly */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  border-radius: inherit; /* Inherit the border-radius from the parent */
+  
+  /* The animated gradient */
+  background-image: conic-gradient(
+    from var(--angle),
+    purple,
+    blue,
+    rgb(66, 226, 66),
+    red,
+    purple
+  );
+  
+  z-index: 1; /* Place it behind the iframe */
+  filter: blur(20px);
+  
+  /* Animation and transition */
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  animation: animate-angle 10s linear infinite;
+}
+
+/* Show the glowing border on container hover */
+.iframe-container:hover::before {
+  opacity: 1;
+}
+
+/* The iframe itself should just fill the container */
+.iframe-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: inherit; /* Also inherit the radius to match container */
+  position: relative; /* Ensure it stays above the z-index: -1 pseudo-element */
+  z-index: 1;
+}
+
+.download {
+  
+  margin-top: 20px;
+    color: #fff;
+    background-color: #0000;
+    border-radius: 10px;
+    height: 50px;
+    font-size: 1.1em;
+    transition: background-color .6s ease-in-out;
+    border: 1px dashed rgb(172, 126, 225);
+    z-index: 1;
+}
+.download:hover {
+  background-color: rgb(172, 126, 225);
+  border:1px solid rgb(255, 255, 255);
+}
+
+
+footer{
+  z-index: 2;
+}
