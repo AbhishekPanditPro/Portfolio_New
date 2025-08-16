@@ -92,6 +92,7 @@ font-size: 2em;}
 }
 
 .aboutMe::before {
+  color: white;
   content: "";
   position: absolute;
   width: 100%;
@@ -105,7 +106,7 @@ font-size: 2em;}
     red,
     purple
   );
-  z-index: -1;
+  z-index: -5;
   padding: 3px;
   opacity: 0;
   animation: animate 10s linear infinite;
@@ -120,7 +121,9 @@ font-size: 2em;}
 }
 
 .aboutMe:hover::before {
+  z-index: -5;
   opacity: 1;
+
 }
 
 .aboutMe:hover {

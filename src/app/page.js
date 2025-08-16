@@ -220,7 +220,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <footer>My naem</footer>
+      
     </main>
   );
 }
