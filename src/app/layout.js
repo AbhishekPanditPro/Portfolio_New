@@ -25,6 +25,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      {/* Add this <head> section */}
+      <head>
+        <style>{`
+          @property --angle {
+            syntax: "<angle>";
+            inherits: true;
+            initial-value: 0deg;
+          }
+        `}</style>
+      </head>
       <body
         
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
