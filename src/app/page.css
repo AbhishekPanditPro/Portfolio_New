@@ -294,6 +294,7 @@ font-size: 2em;}
   /* Ensures content doesn't overflow the viewport height */
   overflow: auto; 
   z-index: 1;
+  
 }
 
 /* The main green area holding the list */
@@ -364,7 +365,17 @@ align-items: center;
   width: 80%;
   max-width: 600px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  
 }
+
+@keyframes spin {
+      from {
+        transform: rotate(0deg); /* Starting rotation */
+      }
+      to {
+        transform: rotate(360deg); /* Ending rotation (one full turn) */
+      }
+    }
 
 
 
@@ -422,6 +433,7 @@ content: "";
   
 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition-delay: 0.5s;
 }
 
 .projects::after,.projects::before{
@@ -429,7 +441,7 @@ content: "";
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: inherit;
+  border-radius: 12.5px;
   background-image: conic-gradient(
     from var(--angle),
     purple,
@@ -443,6 +455,7 @@ content: "";
   z-index: -1;
   animation: animate 10s linear infinite;
   transition: opacity 1s ease-in-out, background-color 1s ease-in-out;
+  transition-delay: 0.5s;
   opacity: 0;
 }
 
@@ -450,20 +463,22 @@ content: "";
 
 .projects::before{
     /* top: 100%; */
- 
+
     filter: blur(20px);
 }
 
 
 
-
-
 .projects:hover::after,.projects:hover:before{
-    opacity: 1;
+  border-radius: 102px;
+  opacity: 1;
+
 }
 
 
 .projects:hover {
+  border-radius: 100px;
+  animation: spin 0.5s alternate;
   /* transform: translateY(-10px); Lifts the card on hover/ */
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
