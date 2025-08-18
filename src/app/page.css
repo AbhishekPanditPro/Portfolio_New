@@ -431,9 +431,7 @@ content: "";
   align-items: center;
   position: relative;
   
-
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  transition-delay: 0.5s;
 }
 
 .projects::after,.projects::before{
@@ -455,7 +453,6 @@ content: "";
   z-index: -1;
   animation: animate 10s linear infinite;
   transition: opacity 1s ease-in-out, background-color 1s ease-in-out;
-  transition-delay: 0.5s;
   opacity: 0;
 }
 
@@ -463,21 +460,21 @@ content: "";
 
 .projects::before{
     /* top: 100%; */
-
+ 
     filter: blur(20px);
 }
 
 
 
-.projects:hover::after,.projects:hover:before{
-  border-radius: 102px;
-  opacity: 1;
 
+
+.projects:hover::after,.projects:hover:before{
+    
+    opacity: 1;
 }
 
 
 .projects:hover {
-  border-radius: 100px;
   animation: spin 0.5s alternate;
   /* transform: translateY(-10px); Lifts the card on hover/ */
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
