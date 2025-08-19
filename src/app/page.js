@@ -16,7 +16,7 @@ export default function Home() {
       title: "Accessing Student Performance",
       field: "ML Model",
       description:
-        "Ever wonder if we can predict whether a student will get a math problem right or wrong? Our team took on this challenge using the MathE learning dataset. We developed a sophisticated model using a powerful machine learning technique called XGBoost to analyze various factors like the student's country, the math topic, and even the specific question. To make our predictions even smarter, we engineered new insights from the data, creating unique metrics for student skill, question difficulty, and even the difficulty of an entire topic. After extensive fine-tuning, our model successfully achieved an accuracy of 72.35%, providing a promising new tool that could one day help identify struggling students and improve how math is taught online.",
+        "Ever wonder if we can predict whether a student will get a math problem right or wrong? Our team took on this challenge using the MathE learning dataset. We developed a sophisticated model using a powerful machine learning technique called XGBoost to analyze various factors like the student&apos;s country, the math topic, and even the specific question. To make our predictions even smarter, we engineered new insights from the data, creating unique metrics for student skill, question difficulty, and even the difficulty of an entire topic. After extensive fine-tuning, our model successfully achieved an accuracy of 72.35%, providing a promising new tool that could one day help identify struggling students and improve how math is taught online.",
       linkk:
         "https://github.com/Overfitters-Anonymous/MLDL-Final-Project/blob/main/MathE%20dataset%20analysis%20with%20XGBoost%20and%20Deep%20Learning%20models%20Final%20Report.pdf",
     },
@@ -25,7 +25,7 @@ export default function Home() {
       title: "Image Explainer",
       field: "Gen AI App",
       description:
-        "Ever wished you could get a little more insight into the world around you? With Image Explainer, you can. Simply snap a photo, and our app, powered by Gemini AI, will describe what it sees in detail. We originally created this as a tool to help visually impaired individuals explore their environment, and now we've made it available for everyone to enjoy. Plus, with audio descriptions enabled by default, you can hear the story behind your pictures.",
+        "Ever wished you could get a little more insight into the world around you? With Image Explainer, you can. Simply snap a photo, and our app, powered by Gemini AI, will describe what it sees in detail. We originally created this as a tool to help visually impaired individuals explore their environment, and now we&apos;ve made it available for everyone to enjoy. Plus, with audio descriptions enabled by default, you can hear the story behind your pictures.",
       linkk: "https://github.com/AbhishekPanditPro/Lamar",
     },
     {
@@ -42,7 +42,7 @@ export default function Home() {
       title: "FoodieGoodie",
       field: "Website",
       description:
-        "Have you ever wondered what makes a website so enjoyable that you can't wait to come back? That's the core question we explored with FoodieGoodie. This project is more than just an e-commerce site; it's a deep dive into how thoughtful, cognitive design can create a delightful user experience. We experimented with everything from the psychology of colors and the shape of a food container to a playful, animated checkout system. The goal was to discover how these small details could work together to help users navigate faster, more efficiently, and ultimately, make them excited to return. Built from the ground up with HTML, CSS, and JavaScript, FoodieGoodie is our playground for understanding how to make web interactions feel less like a task and more like a joy.",
+        "Have you ever wondered what makes a website so enjoyable that you can&apos;t wait to come back? That&apos;s the core question we explored with FoodieGoodie. This project is more than just an e-commerce site; it&apos;s a deep dive into how thoughtful, cognitive design can create a delightful user experience. We experimented with everything from the psychology of colors and the shape of a food container to a playful, animated checkout system. The goal was to discover how these small details could work together to help users navigate faster, more efficiently, and ultimately, make them excited to return. Built from the ground up with HTML, CSS, and JavaScript, FoodieGoodie is our playground for understanding how to make web interactions feel less like a task and more like a joy.",
       linkk: "https://github.com/TheRealestDiehl/FoodieGoodie",
     },
     {
@@ -51,7 +51,7 @@ export default function Home() {
       field: "Website & Game",
 
       description:
-        "Pixel Painter is more than just a game; it's the result of a journey to experience what it's truly like to work in a real-world software engineering team. From the start, our goal was to build not only a fun game and website using p5.js, HTML, and CSS but also to embrace the entire development lifecycle. We challenged ourselves by applying professional methodologies like Agile and Waterfall, ensuring everything we built was rigorously tested, optimized, and retested for quality. To keep our team in sync and our process smooth, we used advanced collaboration tools like GitHub's Kanban boards and Actions, mirroring a modern tech workflow. This project was our opportunity to put classroom theories into practice, culminating in a final product that we were proud to showcase.",
+        "Pixel Painter is more than just a game; it&apos;s the result of a journey to experience what it&apos;s truly like to work in a real-world software engineering team. From the start, our goal was to build not only a fun game and website using p5.js, HTML, and CSS but also to embrace the entire development lifecycle. We challenged ourselves by applying professional methodologies like Agile and Waterfall, ensuring everything we built was rigorously tested, optimized, and retested for quality. To keep our team in sync and our process smooth, we used advanced collaboration tools like GitHub&apos;s Kanban boards and Actions, mirroring a modern tech workflow. This project was our opportunity to put classroom theories into practice, culminating in a final product that we were proud to showcase.",
       linkk:
         "https://github.com/Delta-Group-Software-Engineering-2023/Delta-10_Pixel_Painter_Software_Engineering_Spring2023",
     },
@@ -60,7 +60,7 @@ export default function Home() {
       title: "Drishti Nepal",
       field: "Mobile Application",
       description:
-        "For the tens of thousands of visually impaired individuals in Nepal, simple daily tasks like paying for groceries can be a significant challenge, creating moments of uncertainty and dependence. Project Drishti was born from a desire to address this, offering an acute insight into a world of possibilities through AI. Our mobile application empowers visually impaired users by instantly recognizing Nepalese currency bills through their phone's camera and announcing the value aloud in the Nepali language. Designed with deep respect for our users, the app works entirely offline, is completely free of ads for a smooth experience, and includes a history feature to help track spending. Drishti is more than just a currency reader; it's an open-source, community-driven initiative with a vision to become a full-fledged daily assistant, and we invite everyone to help us build a more accessible world.",
+        "For the tens of thousands of visually impaired individuals in Nepal, simple daily tasks like paying for groceries can be a significant challenge, creating moments of uncertainty and dependence. Project Drishti was born from a desire to address this, offering an acute insight into a world of possibilities through AI. Our mobile application empowers visually impaired users by instantly recognizing Nepalese currency bills through their phone&apos;s camera and announcing the value aloud in the Nepali language. Designed with deep respect for our users, the app works entirely offline, is completely free of ads for a smooth experience, and includes a history feature to help track spending. Drishti is more than just a currency reader; it&apos;s an open-source, community-driven initiative with a vision to become a full-fledged daily assistant, and we invite everyone to help us build a more accessible world.",
       linkk:
         "https://drishtinepal.medium.com/drishti-an-acute-insight-into-ai-407e417028ce",
     },
@@ -109,7 +109,7 @@ export default function Home() {
       <Navbar />
       
       {/* Chatbot Container - Hidden by default */}
-      <div className="chatbot"
+      <div 
         id="deployment-631ca725-945a-4602-ad6e-d2459413e64a" 
         style={{
           display: showChatbot ? 'block' : 'none',
@@ -174,10 +174,10 @@ export default function Home() {
                 <h1>Abhishek Pandit</h1>
               </div>
               <p id="bio">
-                I'm a software engineer who thrives at the intersection of
+                I&apos;m a software engineer who thrives at the intersection of
                 machine-learning research and full-stack development, always
                 looking to turn ideas into scalable products; off the keyboard,
-                you'll catch me chasing a soccer ball or hiking the nearest
+                you&apos;ll catch me chasing a soccer ball or hiking the nearest
                 trail.
               </p>
               <div className="medias">
