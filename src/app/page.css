@@ -273,12 +273,6 @@ font-size: 2em;}
 
 
 
-
-
-
-
-
-
 /* Project page CSS starts here ----------->*/
 /* 
 
@@ -368,15 +362,6 @@ align-items: center;
   
 }
 
-@keyframes spin {
-      from {
-        transform: rotate(0deg); /* Starting rotation */
-      }
-      to {
-        transform: rotate(360deg); /* Ending rotation (one full turn) */
-      }
-    }
-
 
 
 
@@ -451,7 +436,7 @@ content: "";
   
   padding: 3px;
   z-index: -1;
-  animation: animate 10s linear infinite;
+
   transition: opacity 1s ease-in-out, background-color 1s ease-in-out;
   opacity: 0;
 }
@@ -475,7 +460,7 @@ content: "";
 
 
 .projects:hover {
-  animation: spin 0.5s alternate;
+
   /* transform: translateY(-10px); Lifts the card on hover/ */
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }

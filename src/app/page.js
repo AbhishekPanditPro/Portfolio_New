@@ -8,6 +8,7 @@ import { useState } from "react";
 
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [showChatbot, setShowChatbot] = useState(false);
 
   const projects = [
     {
@@ -67,18 +68,17 @@ export default function Home() {
 
   const downloadPDF = () => {
     const link = document.createElement("a");
-    link.href = "/resume.pdf"; // Make sure this file is in your /public folder
+    link.href = "/resume.pdf";
     link.download = "Abhishek_Resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
+
   const logo = () => {
     const link = document.createElement("a");
-    link.href = "https://github.com/AbhishekPanditPro"; // Make sure this file is in your /public folder
+    link.href = "https://github.com/AbhishekPanditPro";
     link.click();
-
-    // document.body.removeChild(link);
   };
 
   const socialLinks = [
@@ -103,9 +103,69 @@ export default function Home() {
       src: "/instagram.png",
     },
   ];
+
   return (
     <main>
       <Navbar />
+      
+      {/* Chatbot Container - Hidden by default */}
+      <div className="chatbot"
+        id="deployment-631ca725-945a-4602-ad6e-d2459413e64a" 
+        style={{
+          display: showChatbot ? 'block' : 'none',
+          position: 'fixed',
+          bottom: '90px',
+          right: '20px',
+          width: '400px',
+          height: '500px',
+          zIndex: 1000,
+          backgroundColor: 'white',
+          borderRadius: '12px',
+          boxShadow: '0 4px 20px rgba(0,0,0,0.15)',
+          overflow: 'hidden'
+        }}
+      />
+      <script src="https://studio.pickaxe.co/api/embed/bundle.js" defer></script>
+
+      {/* Floating Chat Button */}
+      <button
+        onClick={() => setShowChatbot(!showChatbot)}
+        style={{
+          position: 'fixed',
+          bottom: '20px',
+          right: '20px',
+          width: '60px',
+          height: '60px',
+          borderRadius: '50%',
+          backgroundColor: '#007bff',
+          color: 'white',
+          border: 'none',
+          cursor: 'pointer',
+          boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+          zIndex: 1001,
+          fontSize: '24px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          transition: 'all 0.3s ease',
+          transform: showChatbot ? 'rotate(45deg)' : 'rotate(0deg)'
+        }}
+        onMouseEnter={(e) => {
+          if (!showChatbot) {
+            e.target.style.backgroundColor = '#0056b3';
+            e.target.style.transform = 'scale(1.1)';
+          }
+        }}
+        onMouseLeave={(e) => {
+          if (!showChatbot) {
+            e.target.style.backgroundColor = '#007bff';
+            e.target.style.transform = 'scale(1)';
+          }
+        }}
+      >
+        {showChatbot ? '×' : '💬'}
+      </button>
+
       <Section id="home" title="Home">
         <div className="mainContainer">
           <div className="container2">
@@ -114,10 +174,10 @@ export default function Home() {
                 <h1>Abhishek Pandit</h1>
               </div>
               <p id="bio">
-                I’m a software engineer who thrives at the intersection of
+                I'm a software engineer who thrives at the intersection of
                 machine-learning research and full-stack development, always
                 looking to turn ideas into scalable products; off the keyboard,
-                you’ll catch me chasing a soccer ball or hiking the nearest
+                you'll catch me chasing a soccer ball or hiking the nearest
                 trail.
               </p>
               <div className="medias">
@@ -152,7 +212,6 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* <Section id="about" title="About Me" bgColor="grey" /> */}
       <Section id="projects" title="Projects">
         <div className="mainProject">
           <ul className="listProject">
@@ -170,6 +229,7 @@ export default function Home() {
           </ul>
         </div>
       </Section>
+
       {selectedProject && (
         <div className="modal-overlay" onClick={() => setSelectedProject(null)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -219,8 +279,6 @@ export default function Home() {
           </button>
         </div>
       </Section>
-
-      
     </main>
   );
 }
