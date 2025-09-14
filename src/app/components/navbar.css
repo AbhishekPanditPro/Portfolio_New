@@ -86,3 +86,7 @@
 .bar:hover {
   background-color: rgb(172, 126, 225);
 }
+
+.bar.active {
+  background-color: rgb(172, 126, 225);
+}

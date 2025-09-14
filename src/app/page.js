@@ -148,7 +148,7 @@ export default function Home() {
           alignItems: 'center',
           justifyContent: 'center',
           transition: 'all 0.3s ease',
-          transform: showChatbot ? 'rotate(45deg)' : 'rotate(0deg)'
+          transform: showChatbot ? 'rotate(90deg)' : 'rotate(0deg)'
         }}
         onMouseEnter={(e) => {
           if (!showChatbot) {
@@ -169,7 +169,7 @@ export default function Home() {
       <Section id="home" title="Home">
         <div className="mainContainer">
           <div className="container2">
-            <div className="aboutMe">
+            <div className="aboutMe" >
               <div className="myname">
                 <h1>Abhishek Pandit</h1>
               </div>
@@ -206,6 +206,7 @@ export default function Home() {
                 fill
                 sizes="(max-width: 768px) (max-width: 300px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 alt="My Pic"
+                onClick={() => setShowChatbot(!showChatbot)}
               />
             </div>
           </div>
