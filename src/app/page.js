@@ -3,12 +3,25 @@ import Image from "next/image";
 import "./page.css";
 import Navbar from "./components/navbar";
 import Section from "./components/section";
+import Typewriter from "./components/Typewriter"
 
 import { useState } from "react";
 
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [showChatbot, setShowChatbot] = useState(false);
+  const [blur, setBlur] = useState(false);
+
+  const [learnMore, setLearnMore] = useState(false);
+  const [clickMain, setClickMain] = useState(true);
+
+
+  
+
+
+
+
+
 
   const projects = [
     {
@@ -83,106 +96,164 @@ export default function Home() {
 
   const socialLinks = [
     {
-      name: "facebook",
-      href: "https://www.facebook.com/abu.abhishek100",
-      src: "/facebook.png",
-    },
-    {
       name: "github",
       href: "https://github.com/AbhishekPanditPro",
-      src: "/github.png",
+      src: "/github.svg",
     },
     {
       name: "linkedin",
       href: "https://www.linkedin.com/in/abhishek-pandit1/",
-      src: "/linkedin.png",
+      src: "/linkedin.svg",
     },
     {
       name: "instagram",
       href: "https://www.instagram.com/ab.hishekpandit/",
-      src: "/instagram.png",
+      src: "/instagram.svg",
+    },
+    {
+      name: "facebook",
+      href: "https://www.facebook.com/abu.abhishek100",
+      src: "/facebook.svg",
     },
   ];
+
+
+  // const blurBackground = ()=>{
+  //   const main = document.getElementsByTagName("main")
+  //   main[0].style.backgroundColor = "white"
+  //   console.log("i ma printing the element")
+  //   console.log(main);;
+  // }
+
+  const info = [`I am a fast paced, collaborative and  solution-driven software engineer. I graduated this past spring with a major in Computer Science from Kent State University. I have a couple years of project experience across school teams and a current internship.` 
+  ,`I am working as a software engineer intern at  Gao Tek, I am working with customizing a WordPress E Commerce website where I am handling bulk CSV product imports and building plugin-free PHP/JS features like an AJAX live search. I emphasized in web fundamentals, REST APIs, data modeling and documentation. `,`
+  
+
+
+I’ve also contributed to a more than half-dozen projects where I partnered with classmates, faculty to turn requirements into working systems. Some of the projects that I worked are, first, Image Explainer app. It was primarily build for visually impaired people to recognize surrounding with a voice. I built using a react native with gemini vision AI application from the ground zero. At the end of the project, I was able to ship the app to the production level. Second, I worked on a website called NEO Volleyball. It was built for automating excel based workflow into digital workflow. I was able to automate most of the digital tasks including with team and game scheduling and data analytics. Third, I worked in ecommerce food delivery project were I leveraged the use of cognitive principles to attract users, engage them for a longer period of  time merged with interactive UI/UX design. I also worked in some Machine Learning projects and researched in inference LLMs and blockchain.`]
+
+
+
 
   return (
     <main>
       <Navbar />
-      
-      {/* Chatbot Container - Hidden by default */}
-      <div 
-        id="deployment-631ca725-945a-4602-ad6e-d2459413e64a" 
+      <div className="backgroundBlur">
+      <div
+        id="deployment-631ca725-945a-4602-ad6e-d2459413e64a"
         style={{
-          display: showChatbot ? 'block' : 'none',
-          position: 'fixed',
-          bottom: '90px',
-          right: '20px',
-          width: '400px',
-          height: '500px',
+          display: showChatbot ? "block" : "none",
+          position: "fixed",
+          bottom: "90px",
+          right: "20px",
+          width: "400px",
+          height: "500px",
           zIndex: 1000,
-          backgroundColor: 'white',
-          borderRadius: '12px',
-          boxShadow: '0 4px 20px rgba(0,0,0,0.15)',
-          overflow: 'hidden'
+          backgroundColor: "white",
+          borderRadius: "12px",
+          boxShadow: "0 4px 20px rgba(0,0,0,0.15)",
+          overflow: "hidden",
         }}
       />
-      <script src="https://studio.pickaxe.co/api/embed/bundle.js" defer></script>
+    </div>
+     
+      <script
+        src="https://studio.pickaxe.co/api/embed/bundle.js"
+        defer
+      ></script>
 
-      {/* Floating Chat Button */}
+  
+    
       <button
-        onClick={() => setShowChatbot(!showChatbot)}
+        onClick={() => {setShowChatbot(!showChatbot);}}
         style={{
-          position: 'fixed',
-          bottom: '20px',
-          right: '20px',
-          width: '60px',
-          height: '60px',
-          borderRadius: '50%',
-          backgroundColor: '#007bff',
-          color: 'white',
-          border: 'none',
-          cursor: 'pointer',
-          boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+          position: "fixed",
+          bottom: "20px",
+          right: "20px",
+          width: "60px",
+          height: "60px",
+          borderRadius: "50%",
+          backgroundColor: "#007bff",
+          color: "white",
+          border: "none",
+          cursor: "pointer",
+          boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
           zIndex: 1001,
-          fontSize: '24px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          transition: 'all 0.3s ease',
-          transform: showChatbot ? 'rotate(90deg)' : 'rotate(0deg)'
+          fontSize: "24px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          transition: "all 0.3s ease",
+          transform: showChatbot ? "rotate(90deg)" : "rotate(0deg)",
+
         }}
         onMouseEnter={(e) => {
           if (!showChatbot) {
-            e.target.style.backgroundColor = '#0056b3';
-            e.target.style.transform = 'scale(1.1)';
+            e.target.style.backgroundColor = "#0056b3";
+            e.target.style.transform = "scale(1.1)";
           }
         }}
         onMouseLeave={(e) => {
           if (!showChatbot) {
-            e.target.style.backgroundColor = '#007bff';
-            e.target.style.transform = 'scale(1)';
+            e.target.style.backgroundColor = "#007bff";
+            e.target.style.transform = "scale(1)";
           }
         }}
       >
-        {showChatbot ? '×' : '💬'}
+        {showChatbot ? "×" : "💬"}
       </button>
+      
+      {/* this pops up after clicking the Learn More */}
+      {learnMore && (<div className="myInformation" onClick={() =>{
+        setLearnMore(false)
+      }}>
+        <div className="allInformation"onClick={(e)=>{e.stopPropagation()}} >
+          <h2>About Me</h2>
+          <hr />
+          {info.map((each_info)=>(
+            <p className="textInformation" key={each_info}>{each_info}</p>
+          ))}
+          <button className="closeInformation" onClick={()=>{setLearnMore(false)}}>Close</button>
+            
+        </div>
+      </div>)}
 
       <Section id="home" title="Home">
+      
+        
         <div className="mainContainer">
           <div className="container2">
-            <div className="aboutMe" >
+            <div className="aboutMe">
               <div className="myname">
-                <h1>Abhishek Pandit</h1>
+                <p className="hi">Hi, I&apos;m</p>
+
+                <h1>
+                  <Typewriter
+                    texts={[
+                      "Abhishek Pandit",
+                      "Software Engineer",
+                      "Full Stack Developer",
+                      "ML Developer"
+                    ]}
+                    period={2000}
+                  />
+                </h1>
               </div>
               <p id="bio">
-                I&apos;m a software engineer who thrives at the intersection of
+                a software engineer who thrives at the intersection of
                 machine-learning research and full-stack development, always
                 looking to turn ideas into scalable products; off the keyboard,
                 you&apos;ll catch me chasing a soccer ball or hiking the nearest
                 trail.
               </p>
               <div className="medias">
+                <button className="moreAbout" onClick={()=> {
+                  setLearnMore(true);
+                  setClickMain(false);
+                }}>Learn More</button>
                 {socialLinks.map((link) => (
                   <a
+                    className="socialUrl"
                     key={link.name}
                     href={link.href}
                     target="_blank"
@@ -196,15 +267,17 @@ export default function Home() {
                       alt={link.name}
                     />
                   </a>
+
                 ))}
+                
               </div>
             </div>
             <div className="myimage">
               <Image
                 className="roundedImg"
-                src="/abhishek.png"
+                src="/abhi.png"
                 fill
-                sizes="(max-width: 768px) (max-width: 300px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              
                 alt="My Pic"
                 onClick={() => setShowChatbot(!showChatbot)}
               />
@@ -240,7 +313,9 @@ export default function Home() {
                 return (
                   <>
                     <h2>{project.title}</h2>
+                    <hr />
                     <p>{project.description}</p>
+
 
                     {project.linkk && (
                       <a
@@ -276,10 +351,22 @@ export default function Home() {
           </div>
 
           <button className="download" onClick={downloadPDF}>
-            DOWNLOAD RESUME
+            <Image
+                className=""
+                src="/download.svg"
+                 width={40}
+                height={40}
+                
+              alt="resume download"
+               
+              />
+            Resume
           </button>
         </div>
       </Section>
     </main>
   );
 }
+
+
+

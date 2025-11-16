@@ -50,6 +50,12 @@ Section {
 
 
 }
+@media screen and (max-width:500px){ 
+  .myimage{
+display: none;
+  }
+  
+}
 
 .aboutMe {
   /* border: 2px solid black; */
@@ -86,6 +92,7 @@ Section {
   padding: 5px;
   position: relative;
   z-index: 3;
+  color: black;
 }
 
 
@@ -99,7 +106,7 @@ font-size: 2em;}
   initial-value: 0deg;
 }
 
-.aboutMe::before {
+/* .aboutMe::before {
   color: white;
   content: "";
   position: absolute;
@@ -120,7 +127,7 @@ font-size: 2em;}
   animation: animate 10s linear infinite;
   transition: opacity 1s ease-in-out, background-color 1s ease-in-out;
   filter: blur(20px);
-}
+} */
 
 
 @keyframes animate {
@@ -131,7 +138,7 @@ font-size: 2em;}
 
 
 
-
+/* 
 .aboutMe::after {
   color: white;
   content: "";
@@ -146,42 +153,52 @@ font-size: 2em;}
   animation: animate 10s linear infinite;
   transition: opacity 1s ease-in-out, background-color 1s ease-in-out;
   
-}
-
+} */
+/* 
 .aboutMe:hover::before {
   opacity: 1;
 }
 .aboutMe:hover::after {
   opacity: 1;
   
-}
+} */
 
-.aboutMe:hover {
+/* .aboutMe:hover {
   background-color: black;
   transition: background-color 0.1s ease-in-out; 
-}
+} */
 
 .myname {
   /* font-size: 1.5vw; */
   width: fit-content;
   height: fit-content;
-  font-size: clamp(24px, 1.5vw, 40px);
+  font-size: clamp(30px, 1.5vw, 40px);
   /* border: 2px solid red; */
 }
 #bio {
-  font-size: clamp(15px, 1vw, 40px);
+  /* font-size: clamp(15px, 1vw, 40px); */
     margin: 0;
-    font-size: 1.2em;
+    font-size: 1.5em;
   /* border: 2px solid green; */
 }
 
+.hi{
+  display: inline;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+@media screen and (max-width:500px) {
+  .hi{
+    font-size:0.9em;
+  }
+}
 /* The main container for positioning and triggering the hover */
 .myimage {
-
   position: relative;
-  width: 25vw;
-  max-width: 500px;
-  min-width: 200px;
+  width: 40vw;
+  opacity: 1;
+  z-index: 1;
   aspect-ratio: 1 / 1;
   border-radius: 20px;
 }
@@ -195,9 +212,10 @@ font-size: 2em;}
   transition: opacity 1s ease-in-out;
    mask-image: radial-gradient(circle at 50% 50%, #000 60%, transparent 95%);
   -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 60%, transparent 95%); /* Safari */
+  /* border: 2px solid red; */
 }
 
-.myimage::before {
+/* .myimage::before {
   content: "";
   position: absolute;
   top: 0;
@@ -205,17 +223,14 @@ font-size: 2em;}
   width: 100%;
   height: 100%;
   border-radius: inherit;
-
-  background-image: url("/IMG_4346.jpg");
-  background-size: cover;
-  background-position: center;
+  
 
   z-index: 1;
   opacity: 0;
   transition: opacity 1s ease-in-out;
-}
+} */
 
-.myimage::after {
+/* .myimage::after {
   content: "";
   position: absolute;
   top: -7px;
@@ -233,17 +248,14 @@ font-size: 2em;}
     purple
   );
 
-  filter: blur(20px);
+  filter: blur(10px);
   z-index: -1;
   opacity: 0;
 
   animation: animate 10s linear infinite;
-  transition: opacity 0.4s ease-in-out;
-}
+  transition: opacity 0.7s ease-in-out;
+} */
 
-.myimage:hover .roundedImg {
-  opacity: 0; /* Fade out the initial image */
-}
 
 .myimage:hover::before {
   opacity: 1; /* Fade in the hover image */
@@ -257,7 +269,8 @@ font-size: 2em;}
 /* logos will go here */
 .medias{
   display: flex;
-  gap:10px
+  gap:10px;
+  margin-left: 0px;;
 }
 
 .logo{
@@ -288,11 +301,14 @@ font-size: 2em;}
   /* Ensures content doesn't overflow the viewport height */
   overflow: auto; 
   z-index: 1;
+
   
 }
 
+
 /* The main green area holding the list */
 .mainProject {
+
   width: 80%;
   display: flex;
   justify-content: center;
@@ -316,7 +332,7 @@ font-size: 2em;}
   /* Creates 2 rows of equal height */
   /* grid-template-rows: repeat(3, 1fr);     */
 
-  gap: 3rem; /* The space between your project containers */
+  gap: 2rem; /* The space between your project containers */
   width: 80%;
   height: 80%;
   
@@ -342,8 +358,109 @@ align-items: center;
   align-items: center;
   z-index: 1000;
   color: white;
+
 }
 
+.myInformation{
+position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+  color: white;
+
+}
+hr{
+  border: 1px solid black;
+}
+.allInformation{
+  position: relative;
+  background-color: #cbc3ab; /* Match your project card color or use white */
+  color: black;
+  padding: 2rem; 
+  border-radius: 15px;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  /* overflow: hidden; */
+  
+}
+
+.allInformation::before{
+
+content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background-image: conic-gradient(
+    from var(--angle),
+    purple,
+    blue,
+    rgb(66, 226, 66),
+    red,
+    purple
+  );
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  z-index: -1;
+  animation: animate 10s linear infinite;
+  transition: opacity 1s ease-in-out, background-color 1s ease-in-out;
+  opacity: 1;
+
+}
+.allInformation::before{
+  filter: blur(20px);
+}
+
+
+.closeInformation{
+  background-color: black;
+  color: white;
+
+  font-family: sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2em;
+  margin-right: 20px;
+
+  border-radius: 7px;
+  /* box-shadow: 0px 5px 6px rgb(75, 75, 75); */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* pointer-events: none;   <- ignores clicks */
+  /* cursor: default; */
+  border: none;
+  /* overflow: hidden; */
+  min-width: 70px;
+  height: 30px;
+  
+}
+.textInformation{
+  font-size: 1.2em;
+
+}
+
+.closeInformation:hover{
+  transform: scale(1.2);
+  box-shadow: 6px 7px 6px rgb(75, 75, 75);
+  color: rgb(229, 170, 170);
+
+  
+}
+
+@media (max-width:500px) {
+  .textInformation{
+    font-size: 0.9em;;
+  }
+  
+}
 
 
 
@@ -352,18 +469,16 @@ align-items: center;
 /* The white box holding the enlarged project content */
 .modal-content {
   position: relative;
-  background-color: #333; /* Match your project card color or use white */
-  color: white;
+  background-color: #cbc3ab; /* Match your project card color or use white */
+  color: black;
   padding: 2rem; 
   border-radius: 15px;
   width: 80%;
   max-width: 600px;
+  
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   
 }
-
-
-
 
 
 .modal-content::before{
@@ -407,6 +522,7 @@ content: "";
   width: 80% ;
   height: 50%;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+   box-shadow: 0 20px 24px rgba(0, 0, 0, 1);
   
   max-width:500px;
   max-height: 500px;
@@ -415,8 +531,9 @@ content: "";
   justify-content: center;
   align-items: center;
   position: relative;
+
   
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,;
 }
 
 .projects::after,.projects::before{
@@ -472,6 +589,20 @@ content: "";
 }
 
 
+.logo{
+  /* background-color: green; */
+  transition: transform 0.3s ease-in-out;
+
+}
+.logo:hover{
+  transform: scale(1.2);
+  /* filter: drop-shadow(20px, 20px, 50px, rgb(168,85,247,0.8)); */
+
+  filter: drop-shadow(0 0 3px rgb(92, 90, 92,1));
+
+}
+
+
 
 
 /* --- Responsiveness for smaller screens --- */
@@ -509,19 +640,30 @@ content: "";
 /* The close button inside the enlarged view */
 .project-close {
   display: block;
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: rgb(199, 182, 218);
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-  border-radius: 5px;
-  text-align: center;
+  background-color: black;
+  color: white;
+
+  font-family: sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2em;
+  margin-right: 20px;
+  margin-top: 10px;
+
+  border-radius: 7px;
+  /* box-shadow: 0px 5px 6px rgb(75, 75, 75); */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* pointer-events: none;   <- ignores clicks */
+  /* cursor: default; */
   border: none;
-  transition: background-color 0.6s ease-in-out;
+  /* overflow: hidden; */
+  min-width: 70px;
+  height: 30px;
 }
 .project-close:hover{
-   background-color: rgb(172, 126, 225);;
-   color: rgb(255, 255, 255);
+   transform: scale(1.2);
+  box-shadow: 6px 7px 6px rgb(75, 75, 75);
+  color: rgb(229, 170, 170);
+
 }
 
 /* This is the magic! Styling for the enlarged state */
@@ -567,11 +709,12 @@ content: "";
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 80%;
-  height: 80%;
+  width: 95%;
+  height: 90%;
   /* border: 2px solid red; */
   /* background-color: coral; */
   border-radius: 20px;
+  z-index: 5;;
 }
 
 /* iframe{
@@ -660,24 +803,70 @@ box-shadow: 0 4px 8px rgba(0,0,0,0.8);
   z-index: 1;
 }
 
-.download {
-  
+
+
+
+
+.download{
+  display: flex;
+  align-items: center;
+  gap:5px;
+  background-color: black;
+  color: white;
   margin-top: 20px;
-    color: #fff;
-    background-color: #0000;
-    border-radius: 10px;
-    height: 50px;
-    font-size: 1.1em;
-    transition: background-color .6s ease-in-out;
-    border: 1px dashed rgb(172, 126, 225);
-    z-index: 1;
+  margin-bottom: 40px;
+  font-family: sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2em;
+  margin-right: 20px;
+  border-radius: 7px;
+  /* box-shadow: 0px 5px 6px rgb(75, 75, 75); */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* pointer-events: none;   <- ignores clicks */
+  /* cursor: default; */
+  border: none;
+  /* overflow: hidden; */
+  min-width: 120px;
+  font-weight: bold;
+  
 }
-.download:hover {
-  background-color: rgb(172, 126, 225);
-  border:1px solid rgb(255, 255, 255);
+
+.download:hover{
+  transform: scale(1.2);
+  box-shadow: 6px 7px 6px rgb(75, 75, 75);
+
+  
 }
 
 
 footer{
   z-index: 2;
+}
+
+
+
+.moreAbout{
+  background-color: black;
+  color: white;
+
+  font-family: sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2em;
+  margin-right: 20px;
+  border-radius: 7px;
+  /* box-shadow: 0px 5px 6px rgb(75, 75, 75); */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* pointer-events: none;   <- ignores clicks */
+  /* cursor: default; */
+  border: none;
+  /* overflow: hidden; */
+  min-width: 120px;
+  
+}
+
+.moreAbout:hover{
+  transform: scale(1.2);
+  box-shadow: 6px 7px 6px rgb(75, 75, 75);
+
+  
 }

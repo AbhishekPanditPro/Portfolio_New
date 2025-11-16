@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
         
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="background">
+        {/* <div className="background">
    <span></span>
    <span></span>
    <span></span>
@@ -60,7 +60,7 @@ export default function RootLayout({ children }) {
    <span></span>
    <span></span>
    <span></span>
-</div>
+</div> */}
         {children}
       </body>
     </html>

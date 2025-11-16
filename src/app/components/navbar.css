@@ -81,8 +81,23 @@
     border-radius: 10px;
     height: 1.7em;
     font-size: 1.1em;
-    transition: background-color .6s ease-in-out;
+    transition: background-color .6s ease-in-out, transform 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
 }
 .bar:hover {
+  transform: scale(1.15);
   background-color: rgb(172, 126, 225);
 }
+
+.navimg{
+    position: static;
+    width: 40px;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    color: transparent;
+
+}
+
